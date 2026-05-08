@@ -6,6 +6,10 @@
 ![Python](https://img.shields.io/badge/lang-Python_3-3776AB?logo=python&logoColor=white)
 ![Built with GitLab](https://img.shields.io/badge/built_with-GitLab-FC6D26?logo=gitlab)
 
+> Hello @Deku, give us source access and we'll contribute well, we
+> promise. Until then, here's a debug bundle so you don't have to do
+> this yourself.
+
 Narjo, a closed-source iOS Subsonic-API client, does not discover the
 Eversolo DMP-A6 Master Gen 2 as a [UPnP][upnp] renderer. mconnect
 Player and other generic control points discover it fine. So I
