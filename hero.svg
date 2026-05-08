@@ -1,0 +1,100 @@
+<svg viewBox="0 0 1200 430" width="1200" height="430" font-family="Helvetica, Arial, sans-serif" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="narjo-eversolo-upnp: an iOS UPnP control point (Narjo) does not discover the Eversolo DMP-A6 as a renderer because the Eversolo's UDN is not RFC4122 conforming. Direct SOAP from a Python script over the same LAN drives the Eversolo end-to-end including DSD64 and DSD256 native passthrough.">
+  <defs>
+    <marker id="n-arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7 z" fill="#909090"/>
+    </marker>
+    <marker id="n-arrow-accent" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7 z" fill="#4a6e8c"/>
+    </marker>
+    <marker id="n-arrow-fail" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7 z" fill="#a04848"/>
+    </marker>
+  </defs>
+  <g font-family="Helvetica, Arial, sans-serif">
+
+  <text x="20" y="32" font-size="22" font-weight="700" fill="#4a6e8c">narjo-eversolo-upnp</text>
+  <text x="20" y="54" font-size="12" fill="#404040">a closed-source iOS UPnP client (Narjo) does not discover an Eversolo DMP-A6. evidence on the wire shows the renderer is sound. the parser is the suspect.</text>
+
+  <text x="160" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#a04848">CONTROL POINT (Narjo, iOS)</text>
+  <text x="600" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#0a0a0a">EVERSOLO DMP-A6 (UPnP MediaRenderer)</text>
+  <text x="1040" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#4a6e8c">CONTROL POINT (this repo, Python)</text>
+
+  <rect x="20" y="105" width="280" height="290" rx="3" fill="none" stroke="#a04848" stroke-width="1.5"/>
+  <text x="36" y="128" font-size="11" font-weight="600" fill="#0a0a0a">step 1 — scan</text>
+  <text x="36" y="144" font-size="10" fill="#404040">M-SEARCH * HTTP/1.1</text>
+  <text x="36" y="158" font-size="10" fill="#404040">ST: ssdp:all + MediaRenderer</text>
+
+  <text x="36" y="186" font-size="11" font-weight="600" fill="#0a0a0a">step 2 — receive</text>
+  <text x="36" y="202" font-size="10" fill="#404040">USN, LOCATION, SERVER hdrs</text>
+  <text x="36" y="216" font-size="10" fill="#404040">all standard, all present</text>
+
+  <text x="36" y="244" font-size="11" font-weight="600" fill="#0a0a0a">step 3 — parse UDN</text>
+  <text x="36" y="260" font-size="10" fill="#404040">expects 8-4-4-4-12 hex</text>
+  <text x="36" y="274" font-size="10" fill="#404040">(RFC 4122)</text>
+
+  <rect x="36" y="290" width="248" height="48" rx="2" fill="#fbecec" stroke="#a04848" stroke-width="1"/>
+  <text x="46" y="308" font-size="10" font-weight="700" fill="#a04848">REJECTED at parser</text>
+  <text x="46" y="322" font-size="9" fill="#404040">UDN: uuid:800a805eef11-dmr</text>
+  <text x="46" y="333" font-size="9" fill="#404040">no version/variant; literal -dmr suffix</text>
+
+  <text x="36" y="362" font-size="11" font-weight="600" fill="#0a0a0a">step 4 — surface</text>
+  <text x="36" y="378" font-size="10" fill="#a04848">device never enters list</text>
+
+  <rect x="320" y="105" width="560" height="290" rx="4" fill="none" stroke="#0a0a0a" stroke-width="2"/>
+
+  <rect x="340" y="125" width="520" height="64" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="350" y="143" font-size="10" font-weight="700" fill="#4a6e8c">SSDP advertisement (standard)</text>
+  <text x="350" y="160" font-size="10" fill="#404040">deviceType: urn:schemas-upnp-org:device:MediaRenderer:1</text>
+  <text x="350" y="174" font-size="10" fill="#404040">SERVER: UPnP/1.0 DLNADOC/1.50 Platinum/1.0.5.13</text>
+  <text x="350" y="184" font-size="9" fill="#909090">specVersion 1.1, BOOTID + CONFIGID present</text>
+
+  <rect x="340" y="200" width="520" height="80" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="350" y="218" font-size="10" font-weight="700" fill="#4a6e8c">descriptor (standard, three services advertised)</text>
+  <text x="350" y="234" font-size="10" fill="#404040">friendlyName: DMP-A6   manufacturer: EVERSOLO</text>
+  <text x="350" y="248" font-size="10" fill="#404040">modelName: AV Renderer Device   X_DLNADOC: DMR-1.50</text>
+  <text x="350" y="262" font-size="10" fill="#404040">services: AVTransport:1, RenderingControl:1, ConnectionManager:1</text>
+  <text x="350" y="274" font-size="9" fill="#909090">all SCPD, control, event URLs reachable</text>
+
+  <rect x="340" y="290" width="520" height="56" rx="2" fill="#fbecec" stroke="#a04848" stroke-width="1"/>
+  <text x="350" y="308" font-size="10" font-weight="700" fill="#a04848">UDN (the suspected parser-trip)</text>
+  <text x="350" y="324" font-size="11" font-weight="600" font-family="Menlo, Monaco, monospace" fill="#0a0a0a">uuid:800a805eef11-dmr</text>
+  <text x="350" y="338" font-size="9" fill="#404040">12-char MAC-derived id + literal -dmr; no version/variant bits</text>
+
+  <text x="600" y="370" text-anchor="middle" font-size="10" fill="#909090">balanced XLR + 6" screen + native DSD up to DSD256</text>
+
+  <rect x="900" y="105" width="280" height="290" rx="3" fill="none" stroke="#4a6e8c" stroke-width="1.5"/>
+  <text x="916" y="128" font-size="11" font-weight="600" fill="#0a0a0a">ssdp_dump.py</text>
+  <text x="916" y="143" font-size="10" fill="#404040">M-SEARCH, capture, group by USN</text>
+
+  <text x="916" y="170" font-size="11" font-weight="600" fill="#0a0a0a">descriptor_fetch.py</text>
+  <text x="916" y="185" font-size="10" fill="#404040">GET LOCATION, parse XML</text>
+
+  <text x="916" y="212" font-size="11" font-weight="600" fill="#0a0a0a">avtransport_proof.py</text>
+  <text x="916" y="227" font-size="10" fill="#404040">SetAVTransportURI + Play, poll</text>
+
+  <rect x="916" y="244" width="248" height="64" rx="2" fill="#eef2f6" stroke="#4a6e8c" stroke-width="1"/>
+  <text x="926" y="262" font-size="10" font-weight="700" fill="#4a6e8c">RESULT: PLAYING</text>
+  <text x="926" y="278" font-size="9" fill="#404040">Opus 48k → PLAYING</text>
+  <text x="926" y="290" font-size="9" fill="#404040">DSD64 (2.8224 MHz) → PLAYING, native</text>
+  <text x="926" y="302" font-size="9" fill="#404040">DSD256 (11.2896 MHz) → PLAYING, native</text>
+
+  <text x="916" y="328" font-size="10" font-weight="600" fill="#0a0a0a">stream over WAN HTTPS</text>
+  <text x="916" y="343" font-size="9" fill="#404040">remote Navidrome, format=raw,</text>
+  <text x="916" y="355" font-size="9" fill="#404040">22 Mbps DSD256 sustained</text>
+
+  <text x="916" y="382" font-size="10" font-weight="600" fill="#4a6e8c">conclusion</text>
+  <text x="916" y="395" font-size="9" fill="#404040">renderer side is sound;</text>
+  <text x="916" y="406" font-size="9" fill="#404040">discovery is the bug surface</text>
+
+  <line x1="300" y1="200" x2="320" y2="200" stroke="#a04848" stroke-width="1.5" marker-end="url(#n-arrow-fail)"/>
+  <line x1="320" y1="240" x2="300" y2="240" stroke="#909090" stroke-width="1.5" marker-end="url(#n-arrow)"/>
+  <text x="306" y="195" text-anchor="end" font-size="9" fill="#a04848">M-SEARCH</text>
+  <text x="306" y="255" text-anchor="end" font-size="9" fill="#909090">UDN reply</text>
+
+  <line x1="900" y1="200" x2="880" y2="200" stroke="#4a6e8c" stroke-width="1.5" marker-end="url(#n-arrow-accent)"/>
+  <line x1="880" y1="240" x2="900" y2="240" stroke="#909090" stroke-width="1.5" marker-end="url(#n-arrow)"/>
+  <text x="894" y="195" text-anchor="start" font-size="9" fill="#4a6e8c">SOAP SetAVTransportURI + Play</text>
+  <text x="894" y="255" text-anchor="start" font-size="9" fill="#909090">200 OK + state events</text>
+
+  </g>
+</svg>

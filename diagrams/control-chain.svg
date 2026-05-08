@@ -1,0 +1,97 @@
+<svg viewBox="0 0 1200 480" width="1200" height="480" font-family="Helvetica, Arial, sans-serif" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UPnP AVTransport control chain. The Python script POSTs SetAVTransportURI and Play SOAP envelopes to the Eversolo's AVTransport control URL on the LAN. The Eversolo then issues HTTPS GET requests to the remote Navidrome's /rest/stream endpoint with format=raw to fetch the source file untouched, and emits audio on balanced XLR with album art on its screen. The script polls GetTransportInfo and GetPositionInfo to confirm playback state.">
+  <defs>
+    <marker id="c-arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7 z" fill="#909090"/>
+    </marker>
+    <marker id="c-arrow-accent" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7 z" fill="#4a6e8c"/>
+    </marker>
+  </defs>
+  <g font-family="Helvetica, Arial, sans-serif">
+
+  <text x="20" y="32" font-size="18" font-weight="700" fill="#4a6e8c">control chain</text>
+  <text x="20" y="52" font-size="11" fill="#404040">SOAP from the script (left), the Eversolo on the LAN (center), the Navidrome instance over WAN HTTPS (right). audible/visible truth at the bottom.</text>
+
+  <text x="160" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#4a6e8c">avtransport_proof.py</text>
+  <text x="600" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#0a0a0a">Eversolo DMP-A6</text>
+  <text x="1040" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#909090">Navidrome (remote, HTTPS)</text>
+
+  <rect x="20" y="100" width="280" height="280" rx="3" fill="none" stroke="#4a6e8c" stroke-width="1.5"/>
+  <text x="36" y="124" font-size="11" font-weight="600" fill="#0a0a0a">1. build DIDL-Lite metadata</text>
+  <text x="36" y="139" font-size="9" fill="#404040">title, artist, album,</text>
+  <text x="36" y="151" font-size="9" fill="#404040">protocolInfo http-get:*:audio/x-dsf:*</text>
+  <text x="36" y="163" font-size="9" fill="#404040">upnp:albumArtURI = remote URL</text>
+
+  <text x="36" y="190" font-size="11" font-weight="600" fill="#0a0a0a">2. POST SetAVTransportURI</text>
+  <text x="36" y="206" font-size="9" font-family="Menlo, monospace" fill="#404040">SOAPAction: AVTransport:1#...</text>
+  <text x="36" y="220" font-size="9" fill="#404040">CurrentURI = stream URL</text>
+  <text x="36" y="232" font-size="9" fill="#404040">CurrentURIMetaData = DIDL-Lite (esc.)</text>
+
+  <text x="36" y="259" font-size="11" font-weight="600" fill="#0a0a0a">3. POST Play (Speed=1)</text>
+
+  <text x="36" y="288" font-size="11" font-weight="600" fill="#0a0a0a">4. poll every 2-5s</text>
+  <text x="36" y="304" font-size="9" fill="#404040">GetTransportInfo → state</text>
+  <text x="36" y="316" font-size="9" fill="#404040">GetPositionInfo → URI + RelTime</text>
+
+  <rect x="36" y="328" width="248" height="44" rx="2" fill="#eef2f6" stroke="#4a6e8c" stroke-width="1"/>
+  <text x="46" y="345" font-size="10" font-weight="700" fill="#4a6e8c">expected: PLAYING + ticking RelTime</text>
+  <text x="46" y="361" font-size="9" fill="#404040">TRANSITIONING → PLAYING in &lt;5s</text>
+
+  <rect x="320" y="100" width="560" height="280" rx="4" fill="none" stroke="#0a0a0a" stroke-width="2"/>
+
+  <rect x="340" y="120" width="520" height="44" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="350" y="138" font-size="11" font-weight="600" fill="#0a0a0a">AVTransport service (control URL)</text>
+  <text x="350" y="154" font-size="9" font-family="Menlo, monospace" fill="#404040">http://&lt;LAN&gt;:1054/AVTransport/&lt;UDN&gt;/control.xml</text>
+
+  <rect x="340" y="172" width="520" height="44" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="350" y="190" font-size="11" font-weight="600" fill="#0a0a0a">on SetAVTransportURI: parse DIDL-Lite, queue URI</text>
+  <text x="350" y="206" font-size="9" fill="#404040">decoder waits for Play to fetch and start</text>
+
+  <rect x="340" y="224" width="520" height="44" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="350" y="242" font-size="11" font-weight="600" fill="#0a0a0a">on Play: HTTPS GET the stream URL</text>
+  <text x="350" y="258" font-size="9" fill="#404040">Range-aware; sustains 22 Mbps for DSD256 over WAN</text>
+
+  <rect x="340" y="276" width="520" height="44" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="350" y="294" font-size="11" font-weight="600" fill="#0a0a0a">native decode, format-aware</text>
+  <text x="350" y="310" font-size="9" fill="#404040">audio/x-dsf → DoP path; audio/flac → PCM; audio/ogg → Opus</text>
+
+  <rect x="340" y="328" width="520" height="44" rx="2" fill="#eef2f6" stroke="#4a6e8c" stroke-width="1"/>
+  <text x="350" y="346" font-size="11" font-weight="600" fill="#4a6e8c">audible + visible truth</text>
+  <text x="350" y="362" font-size="9" fill="#404040">balanced XLR out + 6" screen (input format, art, title)</text>
+
+  <rect x="900" y="100" width="280" height="280" rx="3" fill="none" stroke="#909090" stroke-width="1.5"/>
+  <text x="916" y="124" font-size="11" font-weight="600" fill="#0a0a0a">/rest/stream</text>
+  <text x="916" y="140" font-size="9" font-family="Menlo, monospace" fill="#404040">?id=&lt;ID&gt;&amp;format=raw</text>
+  <text x="916" y="155" font-size="9" fill="#404040">Subsonic API; Navidrome serves</text>
+  <text x="916" y="167" font-size="9" fill="#404040">native bytes, not transcoded</text>
+
+  <text x="916" y="194" font-size="11" font-weight="600" fill="#0a0a0a">/rest/getCoverArt</text>
+  <text x="916" y="210" font-size="9" font-family="Menlo, monospace" fill="#404040">?id=mf-&lt;ID&gt;&amp;size=300</text>
+  <text x="916" y="222" font-size="9" fill="#404040">Eversolo fetches separately</text>
+  <text x="916" y="234" font-size="9" fill="#404040">to render on screen</text>
+
+  <rect x="916" y="250" width="248" height="56" rx="2" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="926" y="267" font-size="10" font-weight="600" fill="#0a0a0a">tested formats (all native)</text>
+  <text x="926" y="281" font-size="9" fill="#404040">audio/ogg (Opus 48k)</text>
+  <text x="926" y="292" font-size="9" fill="#404040">audio/x-dsf (DSD64 2.8224 MHz)</text>
+  <text x="926" y="303" font-size="9" fill="#404040">audio/x-dsf (DSD256 11.2896 MHz)</text>
+
+  <text x="916" y="328" font-size="10" font-weight="600" fill="#0a0a0a">remote, not local</text>
+  <text x="916" y="343" font-size="9" fill="#404040">FQDN behind nginx, public</text>
+  <text x="916" y="355" font-size="9" fill="#404040">internet hop from Eversolo</text>
+
+  <line x1="300" y1="200" x2="320" y2="200" stroke="#4a6e8c" stroke-width="1.5" marker-end="url(#c-arrow-accent)"/>
+  <text x="310" y="195" text-anchor="middle" font-size="9" fill="#4a6e8c">SOAP</text>
+  <line x1="320" y1="295" x2="300" y2="295" stroke="#909090" stroke-width="1.5" marker-end="url(#c-arrow)"/>
+  <text x="310" y="290" text-anchor="middle" font-size="9" fill="#909090">poll resp</text>
+
+  <line x1="880" y1="220" x2="900" y2="220" stroke="#4a6e8c" stroke-width="1.5" marker-end="url(#c-arrow-accent)"/>
+  <text x="890" y="215" text-anchor="middle" font-size="9" fill="#4a6e8c">GET</text>
+  <line x1="900" y1="260" x2="880" y2="260" stroke="#909090" stroke-width="1.5" marker-end="url(#c-arrow)"/>
+  <text x="890" y="255" text-anchor="middle" font-size="9" fill="#909090">audio</text>
+
+  <text x="20" y="420" font-size="11" font-weight="700" fill="#0a0a0a">timing observed</text>
+  <text x="20" y="436" font-size="10" fill="#404040">SetAVTransportURI → 200 in &lt;200ms · Play → 200 in &lt;200ms · TRANSITIONING → PLAYING in 2-5s · RelTime ticking smoothly thereafter, even at DSD256 over WAN HTTPS.</text>
+
+  </g>
+</svg>

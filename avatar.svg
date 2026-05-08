@@ -1,0 +1,31 @@
+<svg viewBox="0 0 256 256" width="256" height="256" font-family="Helvetica, Arial, sans-serif" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="narjo-eversolo-upnp">
+  <g font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="256" height="256" fill="#ffffff"/>
+  <rect x="0" y="0" width="256" height="256" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+  <text x="128" y="48" text-anchor="middle" font-size="30" font-weight="700" fill="#4a6e8c">upnp</text>
+  <text x="128" y="68" text-anchor="middle" font-size="9" fill="#909090">narjo · eversolo</text>
+
+  <rect x="32" y="98" width="72" height="56" rx="3" fill="none" stroke="#a04848" stroke-width="1.5"/>
+  <text x="68" y="120" text-anchor="middle" font-size="10" font-weight="600" fill="#0a0a0a">Narjo</text>
+  <text x="68" y="135" text-anchor="middle" font-size="8" fill="#909090">iOS</text>
+  <text x="68" y="148" text-anchor="middle" font-size="8" fill="#a04848">rejects UDN</text>
+
+  <line x1="104" y1="120" x2="148" y2="120" stroke="#a04848" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <polygon points="148,120 138,115 138,125" fill="#a04848"/>
+  <text x="126" y="113" text-anchor="middle" font-size="7" fill="#a04848">M-SEARCH</text>
+
+  <line x1="148" y1="134" x2="104" y2="134" stroke="#909090" stroke-width="1.5"/>
+  <polygon points="104,134 114,129 114,139" fill="#909090"/>
+  <text x="126" y="146" text-anchor="middle" font-size="7" fill="#909090">UDN</text>
+
+  <rect x="148" y="98" width="72" height="56" rx="3" fill="none" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="184" y="120" text-anchor="middle" font-size="10" font-weight="600" fill="#0a0a0a">Eversolo</text>
+  <text x="184" y="135" text-anchor="middle" font-size="8" fill="#909090">DMP-A6</text>
+  <text x="184" y="148" text-anchor="middle" font-size="8" fill="#4a6e8c">MediaRenderer:1</text>
+
+  <line x1="40" y1="180" x2="216" y2="180" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="128" y="200" text-anchor="middle" font-size="9" fill="#909090">renderer is sound;</text>
+  <text x="128" y="214" text-anchor="middle" font-size="9" fill="#909090">discovery is the bug</text>
+  </g>
+</svg>

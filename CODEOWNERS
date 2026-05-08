@@ -1,0 +1,9 @@
+# Default owner for everything in narjo-eversolo-upnp.
+* @andrewdunndev
+
+# Captured artifacts and the redaction posture; changes here can leak
+# private network state if reviewed casually.
+ssdp_dump.txt @andrewdunndev
+eversolo_descriptor.xml @andrewdunndev
+eversolo_descriptor_summary.md @andrewdunndev
+proof_of_chain.log @andrewdunndev

@@ -1,0 +1,305 @@
+==============================================================================
+Run 1: Opus / 48kHz smoke test
+==============================================================================
+
+[avt] control: http://<EVERSOLO_IP>:1054/AVTransport/800a805eef11-dmr/control.xml
+[avt] stream:  https://<NAVIDROME>/rest/stream?id=ihfBXWSqnMasIo1gEuckd1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+[avt] art:     https://<NAVIDROME>/rest/getCoverArt?id=mf-ihfBXWSqnMasIo1gEuckd1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&size=300
+[avt] track:   Monster Jam - Theme Song (Monster Jam) [audio/ogg]
+
+--- step 1: SetAVTransportURI -> HTTP 200 ---
+  (no fields in response, raw 277 bytes)
+
+--- step 2: Play -> HTTP 200 ---
+  (no fields in response, raw 264 bytes)
+
+[avt] polling for 12s every 3.0s ...
+
+--- poll 1 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: TRANSITIONING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 1 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:00:00
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=ihfBXWSqnMasIo1gEuckd1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:00
+  AbsTime: 0:00:00
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 2 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 2 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:02:47
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=ihfBXWSqnMasIo1gEuckd1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:01
+  AbsTime: 0:00:01
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 3 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 3 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:02:47
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=ihfBXWSqnMasIo1gEuckd1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:04
+  AbsTime: 0:00:04
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 4 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 4 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:02:47
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=ihfBXWSqnMasIo1gEuckd1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:07
+  AbsTime: 0:00:07
+  RelCount: 0
+  AbsCount: 0
+
+[avt] done.
+
+
+==============================================================================
+Run 2: DSF / DSD64 (2.8224 MHz, 1-bit, native passthrough)
+==============================================================================
+
+[avt] control: http://<EVERSOLO_IP>:1054/AVTransport/800a805eef11-dmr/control.xml
+[avt] stream:  https://<NAVIDROME>/rest/stream?id=1d2d2a31ed216fc55b1c74fc50c8d9d1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+[avt] art:     https://<NAVIDROME>/rest/getCoverArt?id=mf-1d2d2a31ed216fc55b1c74fc50c8d9d1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&size=300
+[avt] track:   Yamina - My Foolish Heart (Opus 3 DSD Showcase 5) [audio/x-dsf]
+
+--- step 1: SetAVTransportURI -> HTTP 200 ---
+  (no fields in response, raw 277 bytes)
+
+--- step 2: Play -> HTTP 200 ---
+  (no fields in response, raw 264 bytes)
+
+[avt] polling for 20s every 4.0s ...
+
+--- poll 1 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: TRANSITIONING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 1 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:02:47
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=1d2d2a31ed216fc55b1c74fc50c8d9d1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:02:26
+  AbsTime: 0:02:26
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 2 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 2 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:05:24
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=1d2d2a31ed216fc55b1c74fc50c8d9d1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:02
+  AbsTime: 0:00:02
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 3 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 3 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:05:24
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=1d2d2a31ed216fc55b1c74fc50c8d9d1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:05
+  AbsTime: 0:00:05
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 4 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 4 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:05:24
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=1d2d2a31ed216fc55b1c74fc50c8d9d1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:09
+  AbsTime: 0:00:09
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 5 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 5 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:05:24
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=1d2d2a31ed216fc55b1c74fc50c8d9d1&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:14
+  AbsTime: 0:00:14
+  RelCount: 0
+  AbsCount: 0
+
+[avt] done.
+
+=== STOP/RESTART CYCLE ===
+
+--- stop: Stop -> HTTP 200 ---
+  (no fields in response, raw 264 bytes)
+
+--- after-stop: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: STOPPED
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- set: SetAVTransportURI -> HTTP 200 ---
+  (no fields in response, raw 277 bytes)
+
+--- play: Play -> HTTP 200 ---
+  (no fields in response, raw 264 bytes)
+
+--- poll 1: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: TRANSITIONING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 2: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 3: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 4: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+
+==============================================================================
+Run 3: DSF / DSD256 (11.2896 MHz, 1-bit, native passthrough)
+==============================================================================
+
+[avt] control: http://<EVERSOLO_IP>:1054/AVTransport/800a805eef11-dmr/control.xml
+[avt] stream:  https://<NAVIDROME>/rest/stream?id=069d54e7bcbd0445febf3efdf93b7e58&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+[avt] art:     https://<NAVIDROME>/rest/getCoverArt?id=mf-069d54e7bcbd0445febf3efdf93b7e58&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&size=300
+[avt] track:   Johann Sebastian Bach - Toccata and Fugue in Dm, BWV 565 (Audiophile Analog Collection Vol. 2) [audio/x-dsf]
+
+--- step 1: SetAVTransportURI -> HTTP 200 ---
+  (no fields in response, raw 277 bytes)
+
+--- step 2: Play -> HTTP 200 ---
+  (no fields in response, raw 264 bytes)
+
+[avt] polling for 25s every 5.0s ...
+
+--- poll 1 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: TRANSITIONING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 1 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:05:24
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=069d54e7bcbd0445febf3efdf93b7e58&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:02:50
+  AbsTime: 0:02:50
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 2 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 2 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:10:09
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=069d54e7bcbd0445febf3efdf93b7e58&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:02
+  AbsTime: 0:00:02
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 3 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 3 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:10:09
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=069d54e7bcbd0445febf3efdf93b7e58&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:07
+  AbsTime: 0:00:07
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 4 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 4 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:10:09
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=069d54e7bcbd0445febf3efdf93b7e58&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:12
+  AbsTime: 0:00:12
+  RelCount: 0
+  AbsCount: 0
+
+--- poll 5 transport: GetTransportInfo -> HTTP 200 ---
+  CurrentTransportState: PLAYING
+  CurrentTransportStatus: OK
+  CurrentSpeed: 1
+
+--- poll 5 position: GetPositionInfo -> HTTP 200 ---
+  Track: 1
+  TrackDuration: 0:10:09
+  TrackMetaData: <DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="narjo-debug-1" parentID="0" r ...[truncated]
+  TrackURI: https://<NAVIDROME>/rest/stream?id=069d54e7bcbd0445febf3efdf93b7e58&u=<USER>&t=<TOKEN>&s=<SALT>&v=1.16.1&c=narjo-debug&format=raw
+  RelTime: 0:00:18
+  AbsTime: 0:00:18
+  RelCount: 0
+  AbsCount: 0
+
+[avt] done.
+
