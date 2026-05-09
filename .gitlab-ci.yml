@@ -1,0 +1,26 @@
+# narjo-eversolo-upnp CI: parse-check the four debug scripts.
+# stdlib-only Python; no requirements to resolve, no tests to run.
+# Brings the project in line with estate baseline (every project
+# has a CI gate, even if it's just "do the scripts still parse").
+
+default:
+  tags:
+    - storr
+  interruptible: true
+
+workflow:
+  auto_cancel:
+    on_new_commit: interruptible
+    on_job_failure: all
+
+stages:
+  - lint
+
+lint:
+  stage: lint
+  image: python:3.13-slim
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - python -m py_compile avtransport_proof.py descriptor_fetch.py find_hires.py ssdp_dump.py
