@@ -167,6 +167,9 @@ What was preserved on purpose:
 | `eversolo_descriptor_summary.md`  | Human-readable parsed summary.                                    |
 | `proof_of_chain.log`              | Combined transcript of all three AVTransport runs.                |
 | `hero.svg`, `diagrams/`           | Diagrams used in this README.                                     |
+| `docs/upstream-platinum-issue.md` | Paste-ready bug report for `plutinosoft/Platinum` on the missing DSD MIMEs in `GetProtocolInfo` Sink. |
+| `docs/upstream-eversolo-support.md` | Paste-ready support-ticket text asking Eversolo to extend the Sink list at SDK init. |
+| `docs/eversolo-getprotocolinfo.txt` | Captured `ConnectionManager:GetProtocolInfo` Sink list (392 entries, 0 DSD MIMEs).             |
 
 ## Acknowledgments and posture
 
