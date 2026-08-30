@@ -1,0 +1,212 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "tutti.dunn.dev" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation "Primary" [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e7] [cursor=pointer]:
+          - /url: /learn/
+        - link "Devices" [ref=e8] [cursor=pointer]:
+          - /url: /devices/
+        - link "Contribute" [ref=e9] [cursor=pointer]:
+          - /url: /contribute/
+        - link "Source" [ref=e10] [cursor=pointer]:
+          - /url: https://gitlab.com/dunn.dev/tutti
+  - main [ref=e11]:
+    - generic [ref=e12]:
+      - paragraph [ref=e13]: EVERSOLO
+      - heading "DMP-A6 Master Edition" [level=1] [ref=e14]
+      - navigation "Manufacturer links" [ref=e15]:
+        - link "manufacturer" [ref=e16] [cursor=pointer]:
+          - /url: https://www.eversolo.com/ProductDetail/EverSoloDMP-A6MasterEdition
+          - generic [ref=e17]: 
+          - text: manufacturer
+        - link "support" [ref=e18] [cursor=pointer]:
+          - /url: https://www.eversolo.com/Contact
+          - generic [ref=e19]: 
+          - text: support
+        - link "firmware" [ref=e20] [cursor=pointer]:
+          - /url: https://www.eversolo.com/Download
+          - generic [ref=e21]: 
+          - text: firmware
+        - link "manual" [ref=e22] [cursor=pointer]:
+          - /url: https://www.eversolo.com/Manual
+          - generic [ref=e23]: 
+          - text: manual
+        - link "purchase" [ref=e24] [cursor=pointer]:
+          - /url: https://www.eversolo.com/where-to-buy
+          - generic [ref=e25]: 
+          - text: purchase
+      - paragraph [ref=e26]: Network audio streamer with built-in DAC, DSD passthrough, and HDMI inputs. Plutinosoft Platinum SDK on the UPnP renderer side.
+      - paragraph [ref=e27]:
+        - text: DMR-1.50 ·
+        - code [ref=e28]: uuid:800a805eef11-dmr
+      - generic [ref=e29]:
+        - generic [ref=e30]: "discovery: all accepted"
+        - generic [ref=e31]: "drive: 8/8 playing"
+        - generic [ref=e32]: ssdp
+        - generic [ref=e33]: drive-attempted
+        - generic [ref=e34]: drive-ok
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: Latest capture
+        - paragraph [ref=e38]: 2026-05-09
+        - paragraph [ref=e39]:
+          - link "github:andrewdunndev" [ref=e40] [cursor=pointer]:
+            - /url: https://github.com/andrewdunndev
+          - text: · tutti 0.1.0-dev
+      - generic [ref=e41]:
+        - paragraph [ref=e42]: Capture count
+        - paragraph [ref=e43]: "1"
+        - paragraph [ref=e44]: across the corpus
+      - generic [ref=e45]:
+        - paragraph [ref=e46]: Decisions
+        - paragraph [ref=e47]: "2"
+        - paragraph [ref=e48]: 2 accepted · 0 rejected
+      - generic [ref=e49]:
+        - paragraph [ref=e50]: Audio sinks
+        - paragraph [ref=e51]: "107"
+        - paragraph [ref=e52]: of 392 total announced
+    - generic [ref=e53]:
+      - heading "Library decisions" [level=2] [ref=e54]
+      - table [ref=e55]:
+        - rowgroup [ref=e56]:
+          - row "Library Result Reason Method" [ref=e57]:
+            - columnheader "Library" [ref=e58]
+            - columnheader "Result" [ref=e59]
+            - columnheader "Reason" [ref=e60]
+            - columnheader "Method" [ref=e61]
+        - rowgroup [ref=e62]:
+          - row "go-upnpcast@reimpl-of-v0.1.0 accepted mediarenderer_v1_avtransport_found deviceType matched MediaRenderer:1; AVTransport service present with controlURL reimplementation · medium" [ref=e63]:
+            - cell "go-upnpcast@reimpl-of-v0.1.0" [ref=e64]
+            - cell "accepted" [ref=e65]:
+              - generic [ref=e66]: accepted
+            - cell "mediarenderer_v1_avtransport_found deviceType matched MediaRenderer:1; AVTransport service present with controlURL" [ref=e67]:
+              - code [ref=e68]: mediarenderer_v1_avtransport_found
+              - paragraph [ref=e69]: deviceType matched MediaRenderer:1; AVTransport service present with controlURL
+            - cell "reimplementation · medium" [ref=e70]
+          - row "huin/goupnp@reimpl-of-v1.3.0 accepted any_device_with_avtransport_service AVTransport:1 service found somewhere in the device tree; goupnp would expose an AVTransport client reimplementation · medium" [ref=e71]:
+            - cell "huin/goupnp@reimpl-of-v1.3.0" [ref=e72]
+            - cell "accepted" [ref=e73]:
+              - generic [ref=e74]: accepted
+            - cell "any_device_with_avtransport_service AVTransport:1 service found somewhere in the device tree; goupnp would expose an AVTransport client" [ref=e75]:
+              - code [ref=e76]: any_device_with_avtransport_service
+              - paragraph [ref=e77]: AVTransport:1 service found somewhere in the device tree; goupnp would expose an AVTransport client
+            - cell "reimplementation · medium" [ref=e78]
+    - generic [ref=e79]:
+      - heading "Drive runs" [level=2] [ref=e80]
+      - paragraph [ref=e81]: tutti sent each tone via SetAVTransportURI + Play and polled the device for 8 scenarios. Source field shows which metadata surface (DIDL-Lite or embedded tags) the device echoed back.
+      - table [ref=e82]:
+        - rowgroup [ref=e83]:
+          - row "Scenario MIME Rate Result Source Round-trip Transcript" [ref=e84]:
+            - columnheader "Scenario" [ref=e85]
+            - columnheader "MIME" [ref=e86]
+            - columnheader "Rate" [ref=e87]
+            - columnheader "Result" [ref=e88]
+            - columnheader "Source" [ref=e89]
+            - columnheader "Round-trip" [ref=e90]
+            - columnheader "Transcript" [ref=e91]
+        - rowgroup [ref=e92]:
+          - row "flac-96k-24 audio/flac 96.0 kHz · 24-bit playing didl-lite matched log →" [ref=e93]:
+            - cell "flac-96k-24" [ref=e94]
+            - cell "audio/flac" [ref=e95]
+            - cell "96.0 kHz · 24-bit" [ref=e96]
+            - cell "playing" [ref=e97]:
+              - generic [ref=e98]: playing
+            - cell "didl-lite" [ref=e99]
+            - cell "matched" [ref=e100]
+            - cell "log →" [ref=e101]:
+              - link "log →" [ref=e102] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/01-flac-96k-24.log
+          - row "flac-44k-16 audio/flac 44.1 kHz · 16-bit playing didl-lite matched log →" [ref=e103]:
+            - cell "flac-44k-16" [ref=e104]
+            - cell "audio/flac" [ref=e105]
+            - cell "44.1 kHz · 16-bit" [ref=e106]
+            - cell "playing" [ref=e107]:
+              - generic [ref=e108]: playing
+            - cell "didl-lite" [ref=e109]
+            - cell "matched" [ref=e110]
+            - cell "log →" [ref=e111]:
+              - link "log →" [ref=e112] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/02-flac-44k-16.log
+          - row "wav-pcm-192k-24 audio/wav 192.0 kHz · 24-bit playing didl-lite matched log →" [ref=e113]:
+            - cell "wav-pcm-192k-24" [ref=e114]
+            - cell "audio/wav" [ref=e115]
+            - cell "192.0 kHz · 24-bit" [ref=e116]
+            - cell "playing" [ref=e117]:
+              - generic [ref=e118]: playing
+            - cell "didl-lite" [ref=e119]
+            - cell "matched" [ref=e120]
+            - cell "log →" [ref=e121]:
+              - link "log →" [ref=e122] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/03-wav-pcm-192k-24.log
+          - row "wav-pcm-96k-24 audio/wav 96.0 kHz · 24-bit playing didl-lite matched log →" [ref=e123]:
+            - cell "wav-pcm-96k-24" [ref=e124]
+            - cell "audio/wav" [ref=e125]
+            - cell "96.0 kHz · 24-bit" [ref=e126]
+            - cell "playing" [ref=e127]:
+              - generic [ref=e128]: playing
+            - cell "didl-lite" [ref=e129]
+            - cell "matched" [ref=e130]
+            - cell "log →" [ref=e131]:
+              - link "log →" [ref=e132] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/04-wav-pcm-96k-24.log
+          - row "wav-pcm-48k-16 audio/wav 48.0 kHz · 16-bit playing didl-lite matched log →" [ref=e133]:
+            - cell "wav-pcm-48k-16" [ref=e134]
+            - cell "audio/wav" [ref=e135]
+            - cell "48.0 kHz · 16-bit" [ref=e136]
+            - cell "playing" [ref=e137]:
+              - generic [ref=e138]: playing
+            - cell "didl-lite" [ref=e139]
+            - cell "matched" [ref=e140]
+            - cell "log →" [ref=e141]:
+              - link "log →" [ref=e142] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/05-wav-pcm-48k-16.log
+          - row "wav-pcm-44k-16 audio/wav 44.1 kHz · 16-bit playing didl-lite matched log →" [ref=e143]:
+            - cell "wav-pcm-44k-16" [ref=e144]
+            - cell "audio/wav" [ref=e145]
+            - cell "44.1 kHz · 16-bit" [ref=e146]
+            - cell "playing" [ref=e147]:
+              - generic [ref=e148]: playing
+            - cell "didl-lite" [ref=e149]
+            - cell "matched" [ref=e150]
+            - cell "log →" [ref=e151]:
+              - link "log →" [ref=e152] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/06-wav-pcm-44k-16.log
+          - row "mp3-320 audio/mpeg 44.1 kHz · 16-bit playing didl-lite matched log →" [ref=e153]:
+            - cell "mp3-320" [ref=e154]
+            - cell "audio/mpeg" [ref=e155]
+            - cell "44.1 kHz · 16-bit" [ref=e156]
+            - cell "playing" [ref=e157]:
+              - generic [ref=e158]: playing
+            - cell "didl-lite" [ref=e159]
+            - cell "matched" [ref=e160]
+            - cell "log →" [ref=e161]:
+              - link "log →" [ref=e162] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/07-mp3-320.log
+          - row "aac-256 audio/mp4 44.1 kHz · 16-bit playing didl-lite matched log →" [ref=e163]:
+            - cell "aac-256" [ref=e164]
+            - cell "audio/mp4" [ref=e165]
+            - cell "44.1 kHz · 16-bit" [ref=e166]
+            - cell "playing" [ref=e167]:
+              - generic [ref=e168]: playing
+            - cell "didl-lite" [ref=e169]
+            - cell "matched" [ref=e170]
+            - cell "log →" [ref=e171]:
+              - link "log →" [ref=e172] [cursor=pointer]:
+                - /url: https://gitlab.com/dunn.dev/tutti/-/blob/main/evidence/eversolo-dmp-a6/captures/20260509t133946z-andrewdunndev/devices/eversolo-dmp-a6/drive/08-aac-256.log
+    - generic [ref=e173]:
+      - heading "Evidence" [level=2] [ref=e174]
+      - paragraph [ref=e175]: Every detail tutti captured. Click each block to expand.
+      - group [ref=e176]:
+        - generic "▸ SSDP — 6 announced USNs" [ref=e177] [cursor=pointer]
+      - group [ref=e178]:
+        - generic "▸ Device descriptor — 3 services advertised" [ref=e179] [cursor=pointer]
+      - group [ref=e180]:
+        - generic "▸ GetProtocolInfo — 107 audio sinks of 392 total" [ref=e181] [cursor=pointer]
+  - contentinfo [ref=e182]:
+    - generic [ref=e183]:
+      - generic [ref=e184]: tutti corpus · MIT
+      - generic [ref=e185]: gitlab.com/dunn.dev/tutti
