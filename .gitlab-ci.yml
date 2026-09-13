@@ -4,8 +4,6 @@
 # has a CI gate, even if it's just "do the scripts still parse").
 
 default:
-  tags:
-    - storr
   interruptible: true
 
 workflow:
